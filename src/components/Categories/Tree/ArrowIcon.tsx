@@ -9,7 +9,7 @@ export const ArrowIcon = ({
 }) => {
   return (
     <>
-      {show && item.subcategory.length > 0 && <HiChevronUp size={30} style={{ fill: 'black' }} />}
+      {show && item.subcategory.length > 0 && <HiChevronUp  />}
       {!show && item.subcategory.length > 0 && <HiChevronDown />}
     </>
   );

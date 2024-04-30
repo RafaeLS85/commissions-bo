@@ -4,7 +4,7 @@ import { getCommissionsHeader } from "@/lib/utils";
 import { MAX_TIMEOUT } from "@/constants";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const API_URL = `${process.env.SELLER_COMMISSION_DEFAULT_SERVICE}`;
+  const API_URL = `${process.env.COMMISSION_SERVICE}`;
   axios.defaults.timeout = MAX_TIMEOUT;
 
   if (req.method === "GET") {

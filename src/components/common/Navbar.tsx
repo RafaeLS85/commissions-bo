@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { desktop } from "@/lib/media";
 import { useSessionStore } from "@/store/session";
-import { BrandIcon } from "./icons/Brand";
+import { HeadTitle } from "./Title";
+import { Avatar } from "@chakra-ui/react";
 
 
 const NavbarContainer = styled.div`  
@@ -20,8 +21,8 @@ const Separator = styled.div`
   width: 1px;
   height: 2rem;  
   background-color: #D4D4D4;
-  margin-left: 4rem;
-  margin-right: 2rem;
+  /* margin-left: 1rem;
+  margin-right: 1rem; */
 
   display: none;
   ${desktop`display: inherit`}
@@ -45,9 +46,9 @@ interface Props {
 function Navbar({ title }: Props) {
   return (    
     <NavbarContainer>      
-      <BrandIcon />
-      <Separator />
-      <Title data-id="pageTitle">{title}</Title>      
+      <HeadTitle title={title}/>
+      {/* <Separator /> */}
+      {/* <Title data-id="pageTitle">{title}</Title>       */}
       <Login />
     </NavbarContainer>
   );
@@ -65,7 +66,13 @@ export default styled(Navbar)`
 const Login = styled(({ className }) => {
   const session = useSessionStore((state) => state.session);
 
-  return <div className={className} data-id="login">{session && session.email}</div>;
+  // return <div className={className} data-id="login">{session && session.email}</div>;
+  return (
+    <span style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem" }}>
+      <div className={className} data-id="login">usuario@gmail.com</div>
+      <Avatar src='https://bit.ly/broken-link' />
+    </span>
+  )
 })`
   display: none;
   ${desktop`display: inherit`}

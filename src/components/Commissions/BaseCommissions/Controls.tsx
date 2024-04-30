@@ -49,11 +49,12 @@ export default function BaseCommissionControls({ actions, state }: Props) {
         <ControlsRightContainer>
           <Button
             id="newDiscountButton"            
-            variant="primary"
+            
             onClick={openModal}
             data-id="newDiscountButton"
-            disabled={!hasPermissionToCreate}
-            size="s"
+            // disabled={!hasPermissionToCreate}
+            
+            colorScheme='purple'
           >
             {i18n["sellerCommission.new"]}
           </Button>

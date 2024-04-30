@@ -6,7 +6,7 @@ import { MAX_TIMEOUT } from "@/constants";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   axios.defaults.timeout = MAX_TIMEOUT;
-  const API_URL = process.env.SELLER_COMMISSION_DEFAULT_SERVICE;
+  const API_URL = process.env.COMMISSION_SERVICE;
 
   if (req.method === "GET") {
     res.setHeader("Content-Type", "application/vnd.openxmlformats");

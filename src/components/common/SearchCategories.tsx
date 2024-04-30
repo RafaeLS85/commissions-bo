@@ -53,7 +53,7 @@ export default function SearchCategories({ onSearch, setPage, id }: Props) {
             variant="primary"          
             data-id="searchButton"
             size="s"
-            disabled={true}
+            // disabled={true}
           >{i18n["search"]}</Button>
           <Button
             id="cleanSearch"            

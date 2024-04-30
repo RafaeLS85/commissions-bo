@@ -1,6 +1,6 @@
 {
-  "version": "1.30.0",
-  "name": "seller-commissions-bo",
+  "version": "1.0.0",
+  "name": "seller-commissions-bo-demo",
   "private": true,
   "scripts": {
     "dev": "next dev",

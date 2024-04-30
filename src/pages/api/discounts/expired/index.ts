@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getDefaultHeaders } from "@/lib/utils";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const API_URL = process.env.SELLER_COMMISSION_DEFAULT_SERVICE;
+  const API_URL = process.env.COMMISSION_SERVICE;
 
   if (req.method === "GET") {
     const base = `${API_URL}/discount`;

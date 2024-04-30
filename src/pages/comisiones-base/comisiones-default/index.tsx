@@ -27,7 +27,7 @@ export default function CommissionDefaultPage() {
 // }
 
 // export const getServerSideProps = (async (context) => {
-//   const API_URL = process.env.NEXT_PUBLIC_SELLER_COMMISSION_DEFAULT_SERVICE;
+//   const API_URL = process.env.COMMISSION_SERVICE;
 //   const url = `${API_URL}/default/current`;
 
 //   let token = context.req.headers.cookie || ""

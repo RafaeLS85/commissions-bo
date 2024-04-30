@@ -99,7 +99,11 @@ const BaseCommissionTable = ({ actions, state }: Props) => {
     base_commissions: { description, message },
   } = EMPTY_STATES;
 
-  if (!items) return;
+  if (!items) return(
+    <>
+     {JSON.stringify("Error")}
+    </>
+  )
 
   if (items.length === 0) {
     return (
@@ -112,7 +116,7 @@ const BaseCommissionTable = ({ actions, state }: Props) => {
   }
 
   return (
-    <span style={{ position: "relative" }}>
+    <span style={{ position: "relative" }}>     
       <CancelModal
         closeModal={() => setOpenCancelModal(false)}
         open={openCancelModal}

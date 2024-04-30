@@ -1,14 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getDefaultHeaders } from "@/lib/utils";
+
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
-  const API_URL = `${process.env.SELLER_COMMISSION_DEFAULT_SERVICE}/base`;
-
-  const API_POST = `${process.env.FAKE_POST_SERVICE}`
-
-
-  // https://api.mercadolibre.com/sites/MLA/search?q=celulares
+  const API_URL = `${process.env.COMMISSION_SERVICE}/search?q=celulares`;
+  const API_POST = `${process.env.FAKE_POST_SERVICE}` 
 
   if (req.method === "GET") {
     const { seller, page, pageSize, sortField, sortOrder } = req.query;
@@ -19,9 +15,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       fixedPage - 1
     }&pageSize=${pageSize}&sortOrder=${sortOrder}&sortField=${sortField}`; 
 
-    fetch(url, {
+    fetch(API_URL, {
       method: "GET",
-      headers: getDefaultHeaders(req),
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => {
         return response.json();
@@ -45,7 +43,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     fetch(API_POST, {
       method: "POST",
-      headers: getDefaultHeaders(req),
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body),
     })
       .then((response) => {
@@ -70,7 +70,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     fetch(url, {
       method: "PUT",
-      headers: getDefaultHeaders(req),
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body),
     })
     .then((response) => {
@@ -91,7 +93,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     fetch(url, {
       method: "DELETE",
-      headers: getDefaultHeaders(req),      
+      headers: {
+        "Content-Type": "application/json",
+      },      
     })
     .then((response) => {
       return response.json();

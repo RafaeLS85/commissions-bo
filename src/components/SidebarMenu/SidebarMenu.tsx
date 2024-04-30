@@ -22,6 +22,7 @@ import CloseIcon from "../common/icons/menu/CloseIcon";
 import { useMenuStore } from "@/store/menu";
 import { useSessionStore } from "@/store/session";
 import { HiChevronUp, HiChevronDown  } from "react-icons/hi2";
+import { Version } from "../common/Version";
 
 const SidebarMenu = () => {  
   const items = useMenuStore((state) => state.items);
@@ -70,7 +71,8 @@ const SidebarMenu = () => {
                 <ActiveLink
                   href={item.href}
                   isOpenMenu={isOpenMenu}
-                  hasPermission={hasPermission(item.permissions)}
+                  // hasPermission={hasPermission(item.permissions)}
+                  hasPermission={true}
                 >
                   <SidebarIcon>{item.icon}</SidebarIcon>
                   <SidebarName style={{ display: isOpenMenu ? "none" : "" }}>
@@ -90,6 +92,7 @@ const SidebarMenu = () => {
           ))}
         </StyledUl>        
       </Sidebar>
+      <Version />
     </Wrapper>
   );
 };
@@ -103,7 +106,7 @@ const SubMenuButton = ({ active, isOpenMenu }: SubMenuButtonProps) => {
   if(isOpenMenu) return <></>; 
   return (
     <ArrowWrapper>
-        { active ? <HiChevronUp size="s" /> : <HiChevronDown size="s" /> } 
+        { active ? <HiChevronUp  /> : <HiChevronDown  /> } 
     </ArrowWrapper>
   );  
 };
@@ -174,7 +177,8 @@ const SubMenu = ({
                   href={submenu.href}
                   key={submenu.name}
                   isOpenMenu={isOpenMenu}
-                  hasPermission={hasPermission(submenu.permissions)}
+                  // hasPermission={hasPermission(submenu.permissions)}
+                  hasPermission={true}
                 >
                   <SubmenuName
                     style={{

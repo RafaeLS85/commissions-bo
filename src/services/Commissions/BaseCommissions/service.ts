@@ -11,11 +11,15 @@ export const commissionBaseService = {
     sortField: { order: string; field: string };
   }) => {
     return fetch(
-      `/api/commissions/base?seller=${seller}&page=${page}&pageSize=${pageSize}&sortField=${sortField.field}&sortOrder=${sortField.order}`
+      `/api/commissions/base?seller=${seller}`
     )
       .then((response) => response.json())
-      .then((data) => {        
-        return data;
+      .then((data) => {   
+         console.log({data})    
+        return {
+          items: data.results,
+          count: data.paging.total
+        };
       })
       .catch((error) => {
         console.error(error);

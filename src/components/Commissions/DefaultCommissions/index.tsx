@@ -93,7 +93,7 @@ export default function DefaultCommissionsForm({ state, actions }: Props) {
       {hasPermissionToEdit && (
         <Button
           id="update"          
-          disabled={disabled}
+          // disabled={disabled}
           onClick={submit}
         >{i18n["commissionDefault.create"]}</Button>
       )}

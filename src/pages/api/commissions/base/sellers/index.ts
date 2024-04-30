@@ -3,12 +3,11 @@ import {  getDefaultHeaders } from '@/lib/utils';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) { 
 
-
   // https://api.mercadolibre.com/sites/MLA/search?q=celulares
 
-  if (req.method === 'GET') {    
-    const base = `${process.env.SELLER_COMMISSION_DEFAULT_SERVICE}/seller`;
-    const url = `${base}/?page=${0}&pageSize=${9999}`;    
+  if (req.method === 'GET') {   
+   
+    const url = `${process.env.COMMISSION_SERVICE}/search?q=celulares`;    
 
     fetch(url, {
       method: "GET",

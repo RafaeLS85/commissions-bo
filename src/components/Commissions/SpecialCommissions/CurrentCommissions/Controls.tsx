@@ -57,7 +57,7 @@ export default function CurrentCommissionControls({ selected, actions, state }: 
           variant="primary"
           onClick={() => {}}
           data-id="newCommissionButton"
-          disabled={!hasPermissionToCreate}
+          // disabled={!hasPermissionToCreate}
           size="s"
         >{i18n["sellerCommission.new"]}</Button>
         <ModalPageForm

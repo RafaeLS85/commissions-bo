@@ -47,6 +47,7 @@ export default function SearchSku({ onSearch, setPage, selected, id }: Props) {
             ref={ref}
             id={id}
             value={value}
+            focusBorderColor='purple.500'
             name={id}
             onChange={(value: any) => setValue(value)}
             placeholder={setPlaceholderMessage()}
@@ -57,18 +58,16 @@ export default function SearchSku({ onSearch, setPage, selected, id }: Props) {
         <SearchButtonContainer>
           <Button
             id="searchButton"
-            
-            type="submit"
-            variant="primary"          
-            data-id="searchButton"
-            size="s"
+            colorScheme='purple'
+            type="submit"           
           >{i18n["search"]}</Button>
           <Button
             id="cleanSearch"          
-            variant="tertiary"
+            
+            colorScheme='gray'
             onClick={cleanSearch}
             data-id="cleanSearch"
-            size="s"
+            
           >{i18n["clean"]}</Button>
         </SearchButtonContainer>
       </FormContainer>

@@ -57,7 +57,7 @@ export default function ExpiredDiscountControls({ selected, actions, extraAction
           onClick={openModal}
           id="newDiscountButton"
           data-id="newDiscountButton"
-          disabled={!hasPermissionToCreate}
+          // disabled={!hasPermissionToCreate}
           size="s"
         >{COMMERCIAL_DISCOUNTS.createBtn}</Button>
       </ControlsRightContainer>
